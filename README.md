@@ -1,2 +1,2 @@
-# gha-session
-Demo repo with "Hello World" Java app 
+# github-actions-session
+Demo repo with Java app 
