@@ -5,17 +5,18 @@ on:
 
 jobs:
   build:
+    # Github runs it on Linux runner
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout the code"
+      - name: "Step 1: Checkout the code"
         uses: actions/checkout@v3
      
-      - name: "Set Java"
+      - name: "Step 2: Set Java"
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'adopt'
       
-      - name: "Build with Maven"
+      - name: "Step 3: Build with Maven"
         run: mvn -ntp clean package
