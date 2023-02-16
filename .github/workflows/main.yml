@@ -1,0 +1,21 @@
+name: "Workflow to build Java project"
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout the code"
+        uses: actions/checkout@v3
+     
+      - name: "Set Java"
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+      
+      - name: "Build with Maven"
+        run: mvn -ntp clean package
