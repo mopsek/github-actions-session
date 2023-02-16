@@ -20,3 +20,13 @@ jobs:
       
       - name: "Step 3: Build with Maven"
         run: mvn -ntp clean package
+        
+      # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+      - name: "Build docker image"
+        uses: docker/build-push-action@v4
+        with:
+          tags: ${{ github.action_repository }}:latest
+          # The default working directory on the runner for steps
+          context: ${{ github.workspace }}
+
+        
