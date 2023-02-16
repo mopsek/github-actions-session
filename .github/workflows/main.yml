@@ -22,7 +22,7 @@ jobs:
         run: mvn -ntp clean package
         
       # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
-      - name: "Build docker image"
+      - name: "Step 4: Build docker image"
         uses: docker/build-push-action@v4
         with:
           tags: ${{ github.action_repository }}:latest
